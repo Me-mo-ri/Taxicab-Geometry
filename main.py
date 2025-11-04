@@ -18,16 +18,16 @@ def evaluation(p):
 
     return mean_scores
 
-meanL1 = evaluation(1)
-meanL2 = evaluation(2)
+manhattan = evaluation(1)
+euclidean = evaluation(2)
 
 print(f"{'k':<5}{'L1-Mean':>15}{'L2-Mean':>15}")
 for i, k in enumerate(ks):
-    print(f"{k:<5}{meanL1[i]:>15.4f}{meanL2[i]:>15.4f}")
+    print(f"{k:<5}{manhattan[i]:>15.4f}{euclidean[i]:>15.4f}")
 
 plt.figure(figsize=(10, 6))
-plt.plot(ks, meanL1, marker='o', label='L1 (Manhattan)', color='blue')
-plt.plot(ks, meanL2, marker='s', label='L2 (Euclidean)', color='orange')
+plt.plot(ks, manhattan, marker='o', label='L1 (Manhattan)', color='blue')
+plt.plot(ks, euclidean, marker='s', label='L2 (Euclidean)', color='orange')
 plt.xlabel('Number of Neighbors (k)')
 plt.ylabel('Mean Accuracy')
 plt.title('KNN Classifier Performance on Digits Dataset')
