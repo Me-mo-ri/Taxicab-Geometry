@@ -21,9 +21,9 @@ def evaluation(p):
 meanL1 = evaluation(1)
 meanL2 = evaluation(2)
 
-print("k \tL1-Mean \t\tL2-Mean")
+print(f"{'k':<5}{'L1-Mean':>15}{'L2-Mean':>15}")
 for i, k in enumerate(ks):
-    print(f"{k} \t{meanL1[i]:.4f} \t({meanL2[i]:.4f})")
+    print(f"{k:<5}{meanL1[i]:>15.4f}{meanL2[i]:>15.4f}")
 
 plt.figure(figsize=(10, 6))
 plt.plot(ks, meanL1, marker='o', label='L1 (Manhattan)', color='blue')
